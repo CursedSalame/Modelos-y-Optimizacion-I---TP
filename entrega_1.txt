@@ -1,0 +1,30 @@
+- Impresión del problema
+
+Claramente, este problema muestra una complejidad fuerte.
+Se supondrá que lo que se busca optimizar es el tiempo de lavado, intentando encontrar una combinación de prendas por lavado que lo minimice y, además, se adapte a las restricciones dadas.
+Pareciera una especie de variación de Coloración de Grafos (una familia de problemas para la que no existe una "solución linda", sino una de complejidad temporal no polinomial), pero para la que además se debe minimizar un valor: hay que encontrar una coloración que minimice el tiempo de lavado, teniendo en cuenta la regla de que el tiempo de cada color será el mayor de las prendas que lo componen.
+Sinceramente, no considero que tenga las herramientas para encontrar una solución completamente óptima a este problema, con mis conocimientos previos a la materia. Intentar fuerza bruta o alguna solución púramente computacional creo que escalaría demasiado en complejidad y tardaría demasiado en procesarse (lo cual no considero una solución aceptable). Es entonces que el próximo análisis estará pensado para encontrar la mejor aproximación posible según mis conocimientos a estas alturas de la materia.
+
+- Ideas de cómo resolver
+
+Al no ser la fuerza bruta una opción (que conste que traté por curiosidad ver qué tanto tardaría, y ya a varios minutos de ejecución lo corté), lo que me queda es utilizar un Algoritmo Greedy. Esto es un algoritmo que a cada paso toma la decisión que maximiza/minimiza el objetivo instantáneamente. Esto tiene la ventaja de ser extremadamente rápido, pero la desventaja de no encontrar la mejor solución posible, sino una aproximación, siendo muy sensible también a condiciones iniciales.
+
+El algoritmo es simple:
+  Se ordenan las prendas de la que más tarda en limpiarse a la que menos,
+  Se van agregando a cada uno de los lavados:
+    Si puede agregarse al primer lavado,
+      perfecto, se agrega;
+    si no puede (debido a la limitación del desteñido),
+      se prueba agregar al lavado siguiente, sucesivamente;
+    si no puede agregarse a ningun lavado existente,
+      se crea un nuevo lavado y se agrega.
+
+De esta forma, las prendas que más tardan en lavarse tendrán menos restricciones a la hora de encontrar dónde, lo cual facilitará que en un mismo lavado hayan prendas de duraciones similares (por ejemplo, en el resultado, en el primer lavado hay dos prendas de 10m y una de 9m). También, siempre que se pueda meter una prenda en un lavado para el que no incrementaría el tiempo, se intentaría lograr.
+
+- Comentarios sobre los cambios
+
+Esta es la primera versión del código. El pro es que funciona muy rápidamente y es sencillo de entender, pero la contra es que no tiene por qué encontrar la solución óptima, sino un acercamiento. Es esperado que con técnicas de programación lineal y lo aprendido en la materia, pueda finalmente encontrarse en una complejidad temporal aceptable.
+
+- Comentarios finales de la entrega
+
+Este es un primer acercamiento a la solución del problema, y es por esto que no busca la perfección. Da una solución aproximada.
