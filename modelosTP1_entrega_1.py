@@ -41,7 +41,7 @@ def guardar_lavados(lavados):
 	orden_final = sorted(resultado_final, key = lambda x : int(x))
 	with open(PATH_ESCRITURA, "w") as f:
 		for prenda in orden_final:
-			f.write(f"e {prenda} {resultado_final[prenda] + 1}\n")
+			f.write(f"{prenda} {resultado_final[prenda] + 1}\n")
 
 
 def main():
