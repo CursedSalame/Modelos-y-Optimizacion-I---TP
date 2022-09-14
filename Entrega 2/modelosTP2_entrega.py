@@ -11,6 +11,9 @@ def leer_archivo(incompatibilidades, tiempos_de_lavado):
 				if parseada[1] not in incompatibilidades:
 					incompatibilidades[parseada[1]] = set()
 				incompatibilidades[parseada[1]].add(parseada[2])
+				if parseada[2] not in incompatibilidades:
+					incompatibilidades[parseada[2]] = set()
+				incompatibilidades[parseada[2]].add(parseada[1])
 			elif parseada[0] == TIEMPO_LAVADO:
 				if parseada[1] not in incompatibilidades:
 					incompatibilidades[parseada[1]] = set()

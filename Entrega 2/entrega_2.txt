@@ -29,7 +29,9 @@ BFS o DFS de toda la vida).
 - Comentarios sobre los cambios
 
 No se presentan cambios sustanciales. Se solucionó un bug en el que el programa explotaría al encontrarse con un grafo no conexo en
-la representación de las prendas desteñidas (en la primera entrega eso no ocurría, pero en esta sí).
+la representación de las prendas desteñidas (en la primera entrega eso no ocurría, pero en esta sí). También, a la hora de leer el txt,
+se supuso que estaban todas las aristas representadas al estilo de digrafo (si había a->b, entonces también b->a); pero en este problema
+había ocurrencias como 1->147, que no tenían su contraparte 147->1. Se adaptó el programa para considerar estos casos.
 Como la entrega anterior, la contra es que no es un óptimo verdadero; pero con tanto volumen se evidencia la ventaja: el
 algoritmo es increíblemente rápido.
 
