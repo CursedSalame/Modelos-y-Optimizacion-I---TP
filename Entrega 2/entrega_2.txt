@@ -1,0 +1,40 @@
+- Impresión del problema
+
+El problema es exactamente el mismo que el anterior (para mayor profundidad, remito a entrega_1.txt), sólo que esta vez a un mayor volumen.
+Tengo una fuerte confianza en mi algoritmo de la entrega anterior (ya que lo diseñé con escalabilidad en mente), por lo que
+lo repetiré para resolver esta versión también.
+
+- Ideas de cómo resolver
+
+Si la fuerza bruta no era una opción la entrega anterior, esta vez aún menos. Por suerte, el algoritmo greedy que armé estaba pensado para ser efectivo
+para un N genérico de prendas. Un repaso rápido del algoritmo:
+
+El algoritmo es simple:
+  Se ordenan las prendas de la que más tarda en limpiarse a la que menos,
+  Se van agregando a cada uno de los lavados:
+    Si puede agregarse al primer lavado,
+      perfecto, se agrega;
+    si no puede (debido a la limitación del desteñido),
+      se prueba agregar al lavado siguiente, sucesivamente;
+    si no puede agregarse a ningun lavado existente,
+      se crea un nuevo lavado y se agrega.
+
+De esta forma, las prendas que más tardan en lavarse tendrán menos restricciones a la hora de encontrar dónde, lo cual facilitará que en un
+mismo lavado hayan prendas de duraciones similares (por ejemplo, en el resultado, en el primer lavado hay dos prendas de 10m y una de 9m).
+También, siempre que se pueda meter una prenda en un lavado para el que no incrementaría el tiempo, se intentaría lograr.
+
+Como añadido, puede visualizarse como un grafo siendo coloreado; pero con una heurística (mayor tiempo de lavado) a la hora de recorrerlo (en vez de los
+BFS o DFS de toda la vida).
+
+- Comentarios sobre los cambios
+
+No se presentan cambios sustanciales. Se solucionó un bug en el que el programa explotaría al encontrarse con un grafo no conexo en
+la representación de las prendas desteñidas (en la primera entrega eso no ocurría, pero en esta sí).
+Como la entrega anterior, la contra es que no es un óptimo verdadero; pero con tanto volumen se evidencia la ventaja: el
+algoritmo es increíblemente rápido.
+
+- Comentarios finales de la entrega
+
+Otra vez, mis conocimientos de programación lineal no me resultan suficientes. Tuve ideas disjuntas, pero el desconocimiento de la
+optimización a valores enteros, junto con la imposiblidad de representar la operación Max(a,b) en términos lineales, me limitaron fuertemente.
+Por eso elejí mantener mi algoritmo de la entrega pasada, en vista de que el resultado final me pareció aceptable.
