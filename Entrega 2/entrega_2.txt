@@ -2,7 +2,7 @@
 
 El problema es exactamente el mismo que el anterior (para mayor profundidad, remito a entrega_1.txt), sólo que esta vez a un mayor volumen.
 Tengo una fuerte confianza en mi algoritmo de la entrega anterior (ya que lo diseñé con escalabilidad en mente), por lo que
-lo repetiré para resolver esta versión también.
+lo repetiré para resolver esta versión también; pero además agregaré una pequeña mejora que hará una gran diferencia.
 
 - Ideas de cómo resolver
 
@@ -23,15 +23,22 @@ De esta forma, las prendas que más tardan en lavarse tendrán menos restriccion
 mismo lavado hayan prendas de duraciones similares (por ejemplo, en el resultado, en el primer lavado hay dos prendas de 10m y una de 9m).
 También, siempre que se pueda meter una prenda en un lavado para el que no incrementaría el tiempo, se intentaría lograr.
 
-Como añadido, puede visualizarse como un grafo siendo coloreado; pero con una heurística (mayor tiempo de lavado) a la hora de recorrerlo (en vez de los
-BFS o DFS de toda la vida).
+Esto ya nos da un buen resultado (493 minutos), pero siento que se podría mejorar añadiendo un factor de aleatoriedad.
+Por qué digo esto? Por un tema respecto al paso 1 del algoritmo: el ordenado. Este último siempre será el mismo,
+es decir, si hay 3 prendas tales que el nombre y tiempo de lavado son ('1', 10m), ('2', 10m), ('3', 5m); el algoritmo
+siempre dará como resultado, por ejemplo, ('1', '2', '3'), pero nunca ('2', '1', '3'), aún cuando este último orden
+es completamente válido. Es entonces que, con el agregado de un factor aleatorio al ordenado, podría lograrse
+una varianza en el resultado final, que podría servir para minimizar aún más (a lo largo de varias ejecuciones).
 
 - Comentarios sobre los cambios
 
-No se presentan cambios sustanciales. Se solucionó un bug en el que el programa explotaría al encontrarse con un grafo no conexo en
+Se solucionó un bug en el que el programa explotaría al encontrarse con un grafo no conexo en
 la representación de las prendas desteñidas (en la primera entrega eso no ocurría, pero en esta sí). También, a la hora de leer el txt,
 se supuso que estaban todas las aristas representadas al estilo de digrafo (si había a->b, entonces también b->a); pero en este problema
 había ocurrencias como 1->147, que no tenían su contraparte 147->1. Se adaptó el programa para considerar estos casos.
+Se cambió el algoritmo de ordenamiento para que sea aleatorio en cada ejecución. Se creó "una especie de API" para
+ejecutar el algoritmo y repetir resultados (detalles en el README.md).
+
 Como la entrega anterior, la contra es que no es un óptimo verdadero; pero con tanto volumen se evidencia la ventaja: el
 algoritmo es increíblemente rápido.
 
@@ -39,4 +46,4 @@ algoritmo es increíblemente rápido.
 
 Otra vez, mis conocimientos de programación lineal no me resultan suficientes. Tuve ideas disjuntas, pero el desconocimiento de la
 optimización a valores enteros, junto con la imposiblidad de representar la operación Max(a,b) en términos lineales, me limitaron fuertemente.
-Por eso elejí mantener mi algoritmo de la entrega pasada, en vista de que el resultado final me pareció aceptable.
+Por eso elegí mantener mi algoritmo de la entrega pasada con cambios adecuados, en vista de que el resultado final me pareció aceptable.
