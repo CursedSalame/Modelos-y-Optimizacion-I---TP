@@ -91,20 +91,20 @@ los datos del mínimo en total de todas las ejecuciones.
 
 <br>
 Para ejecutar el algoritmo con una semilla, se llama
-al programa con un float (ej, 0.731857958343061), de la forma:
+al programa con un float (ej, 0.06414813076250481), de la forma:
 
 ```bash
-$ python3 modelosTP2_entrega.py 0.731857958343061
+$ python3 modelosTP2_entrega.py 0.06414813076250481
 ```
 
 Esto será similar al uso simple, pero para un resultado
 que se espera reproducir:
 
 ```
-Nuevo minimo encontrado! => 441
-Con la semilla: 0.731857958343061
+Nuevo minimo encontrado! => 439
+Con la semilla: 0.06414813076250481
 El la ejecucion n° 1
 
-El mejor tiempo fue 441; con la semilla: 0.731857958343061
+El mejor tiempo fue 439; con la semilla: 0.06414813076250481
  - Ejecucion finalizada!
 ```

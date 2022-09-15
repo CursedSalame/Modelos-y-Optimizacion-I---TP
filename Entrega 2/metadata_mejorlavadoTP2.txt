@@ -1,2 +1,2 @@
-El minimo de tiempo de lavado es: 441
-Logrado con la semilla: 0.731857958343061
+El minimo de tiempo de lavado es: 439
+Logrado con la semilla: 0.06414813076250481
