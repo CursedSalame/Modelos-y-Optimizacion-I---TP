@@ -56,4 +56,4 @@ $$\displaystyle\sum_{j=1}^{n} L_{ij} = 1;\\;\\;\forall i = 1, ... ,n$$
     $$\displaystyle\sum_{i=1}^{n} Y_{ij} = 1; \\;\\; \forall j = 1, ... ,n$$
     $$L_{ij}C_{i} \leq T_{j} \leq L_{ij}C_{i} + M(1 - Y_{ij});\\;\\; \forall i, j = 1, ... ,n$$
     
-    Nótese que $$C_{i}$$ es una constante, por lo que puede multiplicarse por variables sin perder linealidad.
+    Nótese que $C_{i}$ es una constante, por lo que puede multiplicarse por variables sin perder linealidad.
