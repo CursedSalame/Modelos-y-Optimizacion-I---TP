@@ -42,7 +42,7 @@ $$Min\\;\\:Z = \displaystyle\sum_{j=1}^{n} T_{j}$$
 
 1) Cada prenda $i$ no podrá formar parte de más de un lavado, y tendrá que sí o sí pertenecer a uno. La siguientes restricciones lo asegurarán:
 
-$$\displaystyle\sum_{j=1}^{n} L_{ij} = 1;   \forall i = 1, ... ,n$$
+$$\displaystyle\sum_{j=1}^{n} L_{ij} = 1;\\;\\;\forall i = 1, ... ,n$$
 
 2) Por cada prenda $k$ que sería desteñida si fuera lavada junto a $l$, deberá existir la siguiente restricción para asegurar que nunca compartan lavado:
     $$L_{kj} + L_{lj} \leq 1; \\;\\; \forall j = 1, ... ,n$$
