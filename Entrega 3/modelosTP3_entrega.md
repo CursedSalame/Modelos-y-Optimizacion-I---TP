@@ -11,6 +11,7 @@ Para modelizar la situación, se supondrá cada prenda como un vértice del graf
 ## Objetivo
 Determinar cuáles prendas y en qué número de lavado asearlas para un intervalo de tiempo p,con el objetivo de minimizar la suma total de tiempos de lavado, en base a las restricciones de desteñido.
 ## Hipótesis y Supuestos
+ - Toda prenda deberá pertenecer a un lavado.
  - Se supondrá que la suciedad de una prenda está completamente relacionada con su tiempo de lavado, por lo que "la prenda más sucia de ese lavado" _(enunciado)_ se tomará como sinónimo de "la prenda con mayor tiempo de lavado".
  - Se buscará evitar completamente el desteñimiento. Si no se logra, se considerará que no es una solución al problema.
  - El tiempo de lavado de una prenda será una constante, y no se verá afectada por ningún factor (como, por ejemplo, la cantidad de prendas con las que comparte lavado).
