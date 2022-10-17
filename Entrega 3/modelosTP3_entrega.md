@@ -34,7 +34,7 @@ Determinar cuáles prendas y en qué número de lavado asearlas para un interval
 ## Funcional
 Como se busca minimizar el tiempo total de lavados, el funcional entonces será:
 
-$$Min\;\:Z = \displaystyle\sum_{j=1}^{n} T_{j}$$
+$$Min\\;\\:Z = \displaystyle\sum_{j=1}^{n} T_{j}$$
 
 
 
@@ -42,18 +42,18 @@ $$Min\;\:Z = \displaystyle\sum_{j=1}^{n} T_{j}$$
 
 1) Cada prenda $i$ no podrá formar parte de más de un lavado, y tendrá que sí o sí pertenecer a uno. La siguientes restricciones lo asegurarán:
 
-$$\displaystyle\sum_{j=1}^{n} L_{ij} = 1; \;\; \forall i = 1, ... ,n$$
+$$\displaystyle\sum_{j=1}^{n} L_{ij} = 1;   \forall i = 1, ... ,n$$
 
 2) Por cada prenda $k$ que sería desteñida si fuera lavada junto a $l$, deberá existir la siguiente restricción para asegurar que nunca compartan lavado:
-    $$L_{kj} + L_{lj} \leq 1; \;\; \forall j = 1, ... ,n$$
+    $$L_{kj} + L_{lj} \leq 1; \\;\\; \forall j = 1, ... ,n$$
     
     Esta restricción también podría, con el afán de no escribir manualmente cada ecuación, definirse utilizando una **constante** $D_{ik}$ (que represente que las prendas $i$ y $k$ serán desteñidas si son lavadas juntas), tal que:
-    $$L_{ij} + L_{kj} \leq 1 + M(1-D_{ik}); \;\; \forall i,j, k = 1, ... ,n;\;\; i \neq k$$
+    $$L_{ij} + L_{kj} \leq 1 + M(1-D_{ik}); \\;\\; \forall i,j, k = 1, ... ,n;\\;\\; i \neq k$$
     
     Nótese que de esta última forma la cantidad de ecuaciones resultantes sería, en la gran mayoría de los casos, mucho mayor.
     
 3) La variable $T_{j}$ deberá tomar el valor máximo (operación $max$) entre el tiempo de lavado de todas sus prendas. Entonces:
-    $$\displaystyle\sum_{i=1}^{n} Y_{ij} = 1; \;\; \forall j = 1, ... ,n$$
-    $$L_{ij}C_{i} \leq T_{j} \leq L_{ij}C_{i} + M(1 - Y_{ij});\;\; \forall i, j = 1, ... ,n$$
+    $$\displaystyle\sum_{i=1}^{n} Y_{ij} = 1; \\;\\; \forall j = 1, ... ,n$$
+    $$L_{ij}C_{i} \leq T_{j} \leq L_{ij}C_{i} + M(1 - Y_{ij});\\;\\; \forall i, j = 1, ... ,n$$
     
     Nótese que $$C_{i}$$ es una constante, por lo que puede multiplicarse por variables sin perder linealidad.
