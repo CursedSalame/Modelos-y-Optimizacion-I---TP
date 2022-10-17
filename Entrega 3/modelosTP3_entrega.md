@@ -27,6 +27,8 @@ Determinar cuáles prendas y en qué número de lavado asearlas para un interval
  - A la hora de minimizar, no se considerará la posibilidad de realizar múltiples lavados a la vez. Es decir, se minimizará el tiempo de lavado efectivo, independientemente de si es en paralelo con múltiples lavadoras o no.
 
 ## Definición de Variables y Constantes
+ - $i = 1, 2, ..., n$
+ - $j = 1, 2, ..., n$
  - $C_{i}$: Tiempo de lavado de una prenda $i$ [min/p; **constante**]
  - $L_{ij}$: Representa que una prenda $i$ forma parte de un lavado $j$ [bivalente]
  - $T_{j}$: Tiempo que tarda en realizarse un lavado $j$ [min/p]
