@@ -1,0 +1,36 @@
+- Impresión del problema.
+
+El problema es exactamente el mismo que en la primera entrega, por lo que para primeras impresiones,
+se remite a ella.
+La diferencia respecto a entregas anteriores es que finalmente tengo las herramientas necesarias
+para modelizar el problema utilizando Programación Lineal Entera, por lo que la solución estará
+dada en esos términos.
+
+- Ideas de como lo van a intentar resolver
+
+Se utilizarán variables bivalentes para representar si una prenda pertenece a cierto lavado o
+no. Esto nos dará la ventaja de representar tanto las restricciones de desteñido, como la incapacidad
+física de no tener una prenda en dos lavados a la vez.
+Para definir la cantidad correcta de variables, se supondrá el peor caso posible: que haya un
+único lavado por prenda. A la hora de calcular la solución óptima, un lavado sin prendas
+representaría a un lavado que no ocurrió.
+También se utilizará la operación max para determinar el máximo, expresada en términos de
+programación lineal.
+Para más detalle, y presentación formal de hipótesis, funcional y restricciones, se remite al archivo
+"modelosTP3_entrega.md" (que usa LaTex y Markdown para mayor legibilidad).
+
+- Comentarios sobre los cambios
+
+Respecto a la entrega anterior, la mayor diferencia es que ya no se tratará de un algoritmo,
+sino de un modelo de Programación Lineal Entera; por lo que tendrá la ventaja de obtener siempre
+la solución óptima, pero la desventaja de ser no polinomial y escalar fuertemente. El algoritmo
+con heurística dará entonces una mejor solución (o, mejor dicho, la única humanamente posible de
+encontrar) para volúmenes de prendas más grandes, pero será sólo una aproximación; mientras que
+la utilización de PLE será reservada para casos en los que el volumen sea pequeño y se necesite
+un mínimo absoluto.
+
+- Comentarios finales de la entrega
+
+Finalmente se logró llegar a un modelo lineal. Personalmente, el algoritmo de la 2da entrega
+me parece más útil por su escalabilidad, pero es un buen ejercicio lograr modelizar problemas
+complejos y no polinomiales en términos de Programación Lineal.
